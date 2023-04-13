@@ -1,0 +1,75 @@
+{
+  "publisher": "winches",
+  "name": "markdown-add-syntax-mark",
+  "displayName": "Markdown Add Syntax Mark",
+  "version": "1.0.1",
+  "private": true,
+  "description": "Add specified symbols to the text specified within the selected content",
+  "author": "winches",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/winchesHe/plugin-vscode-markdown-add-syntax-mark"
+  },
+  "categories": [
+    "Other"
+  ],
+  "icon": "res/logo.png",
+  "main": "./dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "vscode": "^1.69.0"
+  },
+  "activationEvents": [
+    "onCommand:Markdown-add-syntax-mark"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "Markdown-add-syntax-mark",
+        "category": "Markdown",
+        "title": "%cmd.markdown%"
+      }
+    ]
+  },
+  "configuration": {
+    "title": "Markdown Add Syntax Mark Configuration",
+    "properties": {
+      "RegexSetting": {
+        "type": "string",
+        "description": "匹配文本的正则表达式（默认：匹配选中的英文字母）"
+      },
+      "AddMark": {
+        "type": "string",
+        "default": "`",
+        "description": "给匹配到的文本添加的符号（默认：`引号`）"
+      }
+    }
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --external vscode",
+    "dev": "nr build --watch",
+    "lint": "eslint .",
+    "vscode:prepublish": "nr build",
+    "publish": "vsce publish --no-dependencies",
+    "pack": "vsce package --no-dependencies",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit",
+    "release": "bumpp && nr publish"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^0.25.2",
+    "@antfu/ni": "^0.17.2",
+    "@types/node": "^18.6.4",
+    "@types/vscode": "^1.69.0",
+    "eslint": "^8.21.0",
+    "rimraf": "^3.0.2",
+    "tsup": "^6.2.1",
+    "typescript": "^4.7.4",
+    "vite": "^3.0.4",
+    "vitest": "^0.21.0",
+    "vsce": "^2.10.0"
+  }
+}

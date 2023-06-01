@@ -2,7 +2,7 @@
   "publisher": "winches",
   "name": "markdown-add-syntax-mark",
   "displayName": "Markdown Add Syntax Mark",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "private": true,
   "description": "Add specified symbols to the text specified within the selected content",
   "author": "winches",
@@ -32,19 +32,19 @@
         "category": "Markdown",
         "title": "%cmd.markdown%"
       }
-    ]
-  },
-  "configuration": {
-    "title": "Markdown Add Syntax Mark Configuration",
-    "properties": {
-      "RegexSetting": {
-        "type": "string",
-        "description": "匹配文本的正则表达式（默认：匹配选中的英文字母）"
-      },
-      "AddMark": {
-        "type": "string",
-        "default": "`",
-        "description": "给匹配到的文本添加的符号（默认：`引号`）"
+    ],
+    "configuration": {
+      "title": "Markdown Add Syntax Mark Configuration",
+      "properties": {
+        "RegexSetting": {
+          "type": "string",
+          "description": "匹配文本的正则表达式（默认：匹配选中的英文字母）"
+        },
+        "AddMark": {
+          "type": "string",
+          "default": "`",
+          "description": "给匹配到的文本添加的符号（默认：`引号`）"
+        }
       }
     }
   },
